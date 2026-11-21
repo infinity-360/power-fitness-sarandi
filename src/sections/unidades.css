@@ -1,0 +1,76 @@
+/* As duas abas da barra e os ajustes da Power Fitness. */
+html[data-unidade='1'] [data-so='2'], html[data-unidade='2'] [data-so='1'] { display: none !important; }
+.contents { display: contents; }
+.unidades { display: flex; border: 1px solid var(--fio); background: color-mix(in srgb, var(--fundo) 70%, transparent); }
+.unidades__aba {
+  height: 40px; padding: 0 14px; border: 0; background: transparent; color: var(--apoio);
+  font: 600 14px/1 var(--f-texto); cursor: pointer; transition: background-color 0.3s, color 0.3s; white-space: nowrap;
+}
+.unidades__aba[aria-selected='true'] { background: var(--acento); color: var(--sobre-acento); }
+.unidades__aba:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+@media (hover: hover) { html:not(.is-scrolling) .unidades__aba:not([aria-selected='true']):hover { color: var(--tinta); } }
+.plano__preco--texto b { font-size: calc(58 * var(--su)); }
+.plano__preco--texto > span { display: inline-flex; align-items: baseline; gap: 8px; }
+.fala blockquote::before { content: none; }
+.fala blockquote { font-size: 22px; }
+.fala blockquote strong { display: block; font: 800 calc(76 * var(--su)) / 1 var(--f-display); text-transform: uppercase; color: var(--acento); }
+.plano--destaque .plano__preco--texto b { color: inherit; }
+@media (max-width: 1240px) { .barra__links { display: none; } .barra { gap: 14px; } }
+@media (max-width: 760px) {
+  .barra__cta { display: none; }
+  .unidades__aba { padding: 0 11px; font-size: 13px; }
+  .fala blockquote strong { font-size: 58px; }
+  .grade__dia { letter-spacing: 0; }
+}
+
+/* Identidade da Power Fitness: a logo, o P amarelo, o raio e a composição para a letra larga e itálica. */
+.barra__logo { display: block; width: auto; height: 42px; }
+.letra-p { color: var(--acento); }
+.rodape__logo { display: block; width: auto; height: 46px; margin-bottom: 10px; }
+.rotulo::before, .plano__selo::before {
+  content: ''; display: inline-block; width: 0.72em; height: 1em; margin-right: 0.5em; vertical-align: -0.12em; background: var(--acento);
+  clip-path: polygon(62% 0, 8% 58%, 44% 58%, 30% 100%, 92% 38%, 56% 38%);
+}
+.plano__selo::before { background: currentColor; }
+.hero__palco { row-gap: calc(26 * var(--u)); }
+.hero__titulo { grid-area: auto; font-size: calc(372 * var(--u)); line-height: 0.92; letter-spacing: -0.015em; }
+.hero__l1, .js .sobe.hero__l1 { font-size: 0.5em; line-height: 1; }
+.hero__pe {
+  grid-area: auto; justify-self: stretch; align-self: start; width: auto; margin: 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+}
+.hero__texto { max-width: 560px; }
+.hero__acoes { flex: none; }
+.rodape__nome { font-size: 33vw; letter-spacing: -0.015em; }
+.vaga--rodape { width: 0.74em; height: 0.74em; }
+.vaga--o { width: 0.74em; height: 0.74em; vertical-align: -0.02em; }
+.mod__giga { font-style: normal; }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .hero__pe { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 760px) {
+  .barra__logo { height: 34px; }
+  .hero__titulo { font-size: calc(116 * var(--u)); }
+  .hero__l1, .js .sobe.hero__l1 { display: flex; justify-content: space-between; font-size: 0.54em; }
+  .hero__l1 > span { display: inline; }
+  .hero__pe { display: grid; gap: 16px; }
+  .rodape__nome { font-size: 31vw; }
+}
+
+/* ajustes finos para a letra larga da marca */
+.vaga--mod { left: calc(37% - 210 * var(--u)); top: calc(70 * var(--u)); width: calc(420 * var(--u)); height: calc(420 * var(--u)); }
+.rodape__nome { font-size: 25.5vw; }
+.plano__preco--texto > span > b { color: var(--tinta); }
+.plano--destaque .plano__preco--texto > span > b, .plano--destaque .plano__preco--texto span, .plano--destaque .plano__nota { color: var(--sobre-destaque); }
+.aula__hora { font-size: 28px; }
+.aula { grid-template-columns: 104px 1fr auto; }
+@media (max-width: 760px) {
+  .hero__palco { min-width: 0; }
+  .hero__titulo { font-size: min(24vw, calc(116 * var(--u))); }
+  .mod__faixa { font-size: min(16.5vw, calc(64 * var(--u))); }
+  .vaga--mod { left: auto; top: auto; width: calc(232 * var(--u)); height: calc(232 * var(--u)); }
+  .rodape__nome { font-size: 24.5vw; }
+  .aula { grid-template-columns: 82px 1fr auto; }
+  .aula__hora { font-size: 23px; }
+}
+.planos__aviso { margin-top: 16px; font-size: 13px; color: var(--apoio); }

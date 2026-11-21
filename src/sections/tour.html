@@ -1,0 +1,57 @@
+<section class="tour secao" id="tour">
+  <div class="miolo">
+    <header class="secao__cabeca tour__cabeca">
+      <h2 class="titulo"><span class="mascara"><span class="sobe">Tour virtual</span></span><span class="mascara"><span class="sobe" style="--i:1"><span data-so="1">pela Unidade 1</span><span data-so="2">pela Unidade 2</span></span></span></h2>
+      <p class="secao__sub marco" style="--i:2">Olhe a rua e a fachada em 360° e chegue sabendo onde parar.</p>
+      <span class="vaga vaga--tour" data-vaga="tour" data-forma="bola" data-voo="0.74 1"></span>
+    </header>
+
+    <div class="visor marco" style="--i:1" data-visor tabindex="0" role="img" aria-label="Vista em 360 graus da rua e da fachada da unidade. Use as setas do teclado para olhar em volta.">
+      <img class="visor__reserva" data-so="1" src="./fotos/u1-fachada.webp" alt="Fachada da Unidade 1" width="900" height="1000" loading="lazy" decoding="async">
+      <img class="visor__reserva" data-so="2" src="./fotos/u2-fachada.webp" alt="Fachada da Unidade 2" width="900" height="1000" loading="lazy" decoding="async">
+      <canvas class="visor__tela" aria-hidden="true"></canvas>
+      <p class="visor__selo"><b>360°</b> <span data-so="1">Unidade 1 · Centro</span><span data-so="2">Unidade 2 · João Marangoni</span></p>
+      <p class="visor__dica" aria-hidden="true">Arraste para olhar em volta</p>
+      <div class="visor__botoes">
+        <button type="button" data-visor-acao="menos" aria-label="Afastar a imagem">−</button>
+        <button type="button" data-visor-acao="mais" aria-label="Aproximar a imagem">+</button>
+        <button type="button" data-visor-acao="frente" aria-label="Voltar para a fachada">Fachada</button>
+        <button type="button" data-visor-acao="cheia" aria-label="Abrir em tela cheia">Tela cheia</button>
+      </div>
+    </div>
+
+    <div class="chegar" id="como-chegar">
+      <div class="chegar__info marco" style="--i:0">
+        <h3 class="chegar__titulo">Como chegar</h3>
+        <dl class="chegar__lista">
+          <div>
+            <dt>Endereço</dt>
+            <dd><span data-so="1">R. Salvador Jordano, 872, Centro<br>Sarandi - PR, 87111-150</span><span data-so="2">Av. João Marangoni, 2240<br>Sarandi - PR</span></dd>
+          </div>
+          <div>
+            <dt>Referência</dt>
+            <dd><span data-so="1">Na esquina, em frente à Praça dos Três Poderes.</span><span data-so="2">Na esquina, ao lado da 55 Mecânica Automotiva.</span></dd>
+          </div>
+          <div>
+            <dt>Onde parar</dt>
+            <dd><span data-so="1">Vagas na rua e ao redor da praça.</span><span data-so="2">Estacionamento da academia do outro lado da avenida, com placa da Power Fitness.</span></dd>
+          </div>
+          <div>
+            <dt>Horário</dt>
+            <dd><span data-so="1">Seg a sex, 5h30 às 11h e 15h às 22h<br>Sáb, 9h às 12h · Dom, fechado</span><span data-so="2">Seg a sex, 5h30 às 22h<br>Fim de semana: confirme no WhatsApp</span></dd>
+          </div>
+        </dl>
+        <div class="chegar__acoes">
+          <a class="botao botao--cheio" data-so="1" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Salvador%20Jordano%2C%20872%20-%20Centro%2C%20Sarandi%20-%20PR%2C%2087111-150" target="_blank" rel="noopener">Traçar rota no Google<svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a class="botao botao--cheio" data-so="2" href="https://www.google.com/maps/dir/?api=1&amp;destination=Av.%20Jo%C3%A3o%20Marangoni%2C%202240%2C%20Sarandi%20-%20PR" target="_blank" rel="noopener">Traçar rota no Google<svg class="seta" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h11M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a class="botao botao--linha" data-so="1" href="https://wa.me/554430481832" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="botao botao--linha" data-so="2" href="https://wa.me/5544991519418" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div class="chegar__mapa marco" style="--i:1">
+        <iframe data-so="1" title="Mapa do Google com a Power Fitness Unidade 1" src="https://www.google.com/maps?q=R.%20Salvador%20Jordano%2C%20872%20-%20Centro%2C%20Sarandi%20-%20PR%2C%2087111-150&amp;z=16&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe data-so="2" title="Mapa do Google com a Power Fitness Unidade 2" src="https://www.google.com/maps?q=Av.%20Jo%C3%A3o%20Marangoni%2C%202240%2C%20Sarandi%20-%20PR&amp;z=16&amp;hl=pt-BR&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>

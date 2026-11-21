@@ -1,0 +1,67 @@
+/* Tour virtual: o visor 360° da unidade e, embaixo, como chegar (dados e mapa do Google). */
+.tour__cabeca { position: relative; margin-bottom: calc(40 * var(--su)); padding-right: calc(240 * var(--su)); }
+.vaga--tour {
+  position: absolute; right: calc(20 * var(--su)); top: calc(-46 * var(--su));
+  width: calc(190 * var(--su)); height: calc(190 * var(--su)); --foco: 0.24;
+}
+
+.visor {
+  position: relative; overflow: hidden; aspect-ratio: 16 / 8.2; background: var(--cartao);
+  cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none;
+}
+.visor.is-arrastando { cursor: grabbing; }
+.visor:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+.visor:fullscreen { aspect-ratio: auto; width: 100vw; height: 100vh; }
+.visor__tela, .visor__reserva { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.visor__reserva { object-fit: cover; }
+.visor__tela { opacity: 0; transition: opacity 0.5s linear; }
+.visor.is-viva .visor__tela { opacity: 1; }
+.visor__selo {
+  position: absolute; left: 14px; top: 14px; display: flex; gap: 8px; align-items: center; padding: 8px 12px;
+  background: rgb(0 0 0 / 0.74); color: #fff; font-size: 13px; font-weight: 500; pointer-events: none;
+}
+.visor__selo b { font: 800 17px/1 var(--f-display); color: var(--acento); }
+.visor__dica {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); padding: 8px 14px; white-space: nowrap;
+  background: rgb(0 0 0 / 0.74); color: #fff; font-size: 13px; pointer-events: none; transition: opacity 0.4s linear;
+}
+.visor.is-usado .visor__dica, .visor:not(.is-viva) .visor__dica { opacity: 0; }
+.visor__botoes { position: absolute; right: 14px; top: 14px; display: flex; gap: 1px; }
+.visor:not(.is-viva) .visor__botoes { display: none; }
+.visor__botoes button {
+  min-width: 42px; height: 42px; padding: 0 12px; border: 0; background: rgb(0 0 0 / 0.78); color: #fff;
+  font: 600 14px/1 var(--f-texto); cursor: pointer; transition: background-color 0.25s, color 0.25s;
+}
+.visor__botoes button:focus-visible { outline: 2px solid var(--acento); outline-offset: -2px; }
+@media (hover: hover) {
+  html:not(.is-scrolling) .visor__botoes button:hover { background: var(--acento); color: var(--sobre-acento); }
+}
+
+.chegar {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: calc(32 * var(--su));
+  margin-top: calc(32 * var(--su)); scroll-margin-top: calc(var(--barra) + 16px);
+}
+.chegar__info { display: flex; flex-direction: column; }
+.chegar__titulo { font: 800 calc(40 * var(--su)) / 1.05 var(--f-display); text-transform: uppercase; margin-bottom: 14px; }
+.chegar__lista { display: grid; border-top: 1px solid var(--fio); flex: 1; align-content: start; }
+.chegar__lista > div { display: grid; grid-template-columns: 112px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--fio); }
+.chegar__lista dt { padding-top: 2px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--apoio); }
+.chegar__lista dd { font-size: 15px; line-height: 1.45; }
+.chegar__acoes { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.chegar__mapa { position: relative; min-height: 420px; overflow: hidden; background: var(--cartao); }
+.chegar__mapa iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+@media (max-width: 760px) {
+  .tour__cabeca { margin-bottom: 24px; padding-right: 100px; }
+  .vaga--tour { right: -8px; top: -24px; width: 104px; height: 104px; --foco: 0.2; }
+  .visor { aspect-ratio: 4 / 4.4; }
+  .visor__selo { left: 8px; top: 8px; font-size: 12px; padding: 7px 9px; }
+  .visor__botoes { left: 8px; right: 8px; top: auto; bottom: 8px; }
+  .visor__botoes button { flex: 1 1 auto; padding: 0 6px; font-size: 13px; }
+  .visor__dica { bottom: 60px; }
+  .chegar { grid-template-columns: 1fr; gap: 22px; margin-top: 24px; }
+  .chegar__titulo { font-size: 30px; }
+  .chegar__lista > div { grid-template-columns: 92px 1fr; }
+  .chegar__acoes .botao { flex: 1 1 auto; }
+  .chegar__mapa { min-height: 300px; }
+}
